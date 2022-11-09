@@ -71,6 +71,12 @@ jobs:
         sudo apt install ffmpeg
         sudo apt install texlive-latex-extra
 
+    - name: Test Pdflatex
+      run: |
+        wget https://gist.githubusercontent.com/christian512/2a92b350b5aec0bed66ec7cea4fb2660/raw/c7909b76a5246d8ea50b3a667df1fd84f1b839a3/circuit.tex
+        pdflatex circuit.tex 
+        magick circuit.pdf circuit.png
+
     - name: Convert Notebooks
       run: | 
         rm -rf notebooks
